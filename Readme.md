@@ -17,7 +17,7 @@ Desenvolver um aplicativo de gerenciamento de biblioteca intuitivo e eficiente, 
 
 # Diagramas
 
-![diagrama.PNG](imagem.png)
+![diagrama.PNG](diagrama.PNG)
 
 
 
