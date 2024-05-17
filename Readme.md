@@ -14,9 +14,10 @@
 Desenvolver um aplicativo de gerenciamento de biblioteca intuitivo e eficiente, que permita aos usuários realizar operações como cadastro de livros, empréstimo, reserva, geração de relatórios e administração de usuários de forma fácil e segura.
 
 ## Telas
+
 ## Link das Telas no Replit
 
-[https://1b229cc3-80c6-464a-a292-c7835dd9b0e2-00-2fkyk9jvetnfd.riker.replit.dev/index.html]([URL](https://1b229cc3-80c6-464a-a292-c7835dd9b0e2-00-2fkyk9jvetnfd.riker.replit.dev/index.html))
+https://1b229cc3-80c6-464a-a292-c7835dd9b0e2-00-2fkyk9jvetnfd.riker.replit.dev/index.html
  
 ## Diagramas
 
