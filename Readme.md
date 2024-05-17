@@ -15,7 +15,7 @@ Desenvolver um aplicativo de gerenciamento de biblioteca intuitivo e eficiente, 
 
 ## Telas
 
-## Link das Telas no Replit
+## Link do Site
 
 https://1b229cc3-80c6-464a-a292-c7835dd9b0e2-00-2fkyk9jvetnfd.riker.replit.dev/index.html
  
