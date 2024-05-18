@@ -55,7 +55,7 @@ A página inicial do site apresenta opções de cadastro para diferentes tipos d
 
 Está etapa é responsável pelo login dos usuários, onde, ele insere seu usuario e senha e será direcionado para a página do aluno, professor ou do fornecedor. E assim podendo estar alugado ou navegando pela plataforma. 
 
-![Login1.PNG](/doc/Login1.PNG)
+![Login0.PNG](/doc/Login0.PNG)
 
 ## Telas da Biblioteca
 
@@ -64,7 +64,7 @@ A página da Biblioteca é responsável por listar os livros que possuem. Onde p
 ![biblio.PNG](/doc/biblio.PNG)
 ![Home2.PNG](/doc/Home2.PNG)
 ![Bio.PNG](/doc/Bio.PNG)
-![Bio2.PNG](/doc/Bio2.PNG)
+![Bio1.PNG](/doc/Bio1.PNG)
 ![cienc.PNG](/doc/cienc.PNG)
 ![sports.PNG](/doc/sports.PNG)
 ![sports2.PNG](/doc/sports2.PNG)
