@@ -1,13 +1,13 @@
 # Gerenciador de Biblioteca BookEase
 ## Repositorio destinado ao projeto Integrador dos instegrantes:
 
-* ALEXSANDRA OLIVEIRA DE JESUS
-* ANA KAROLINI BLOEMER NOTH
-* GUSTAVO FERNANDES COSTA
-* KAUE OSMAR BORNHOFEN
-* MARCELO DE OLIVEIRA SILVA
-* TACIO DE PAULO CAVALCANTI FARIAS
-* THALITA PEREIRA ALFONSO 
+* Alexsandra Oliveira De Jesus
+* Ana Karolini Bloemer Noth
+* Gustavo Fernandes Costa
+* Kaue Osmar Bornhofen
+* Marcelo De Oliveira Silva
+* Tacio De Paulo Cavalcanti Farias
+* Thalita Pereira Alfonso 
 
 ## Descrição 
 
@@ -27,7 +27,13 @@ https://replit.com/@lexawolf/PI#index.html
 ## Link do Site
 
 https://1b229cc3-80c6-464a-a292-c7835dd9b0e2-00-2fkyk9jvetnfd.riker.replit.dev/index.html
- 
+
+## Código HTML
+
+Arquivo direcionado
+
+![Codigo.pdf](/Code/Codigo.pdf)
+
 ## Diagramas
 
 ![diagrama.PNG](/doc/diagrama.PNG)
