@@ -32,7 +32,13 @@ https://1b229cc3-80c6-464a-a292-c7835dd9b0e2-00-2fkyk9jvetnfd.riker.replit.dev/i
 
 Arquivo direcionado
 
-![Codigo.pdf](/Code/Codigo.pdf)
+[Code/Codigo.pdf](https://github.com/AnaKarolini/Gerenciador-de-Biblioteca/blob/c315c1f5d89c3d1e0125238f354f91b17ba1f536/Code/Codigo.pdf)
+
+## Código Backend
+
+Arquivo direcionado
+
+
 
 ## Diagramas
 
