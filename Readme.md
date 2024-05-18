@@ -1,5 +1,5 @@
 # Gerenciador de Biblioteca BookEase
-## Repositorio destinado ao projeto Integrador dos instegrantes:
+## Repositório destinado ao projeto Integrador dos integrantes:
 
 * Alexsandra Oliveira De Jesus
 * Ana Karolini Bloemer Noth
@@ -59,13 +59,13 @@ A página inicial do site apresenta opções de cadastro para diferentes tipos d
 
 ## Tela de login 
 
-Está etapa é responsável pelo login dos usuários, onde, ele insere seu usuario e senha e será direcionado para a página do aluno, professor ou do fornecedor. E assim podendo estar alugado ou navegando pela plataforma. 
+Está etapa é responsável pelo login dos usuários, onde, ele insere seu usuário e senha e será direcionado para a página do aluno, professor ou do fornecedor. E assim podendo estar alugando ou navegando pela plataforma. 
 
 ![Login0.PNG](/doc/Login0.PNG)
 
 ## Telas da Biblioteca
 
-A página da Biblioteca é responsável por listar os livros que possuem. Onde podem estar explorar nossa vasta coleção de livros disponíveis para empréstimo. Ao encontrar um livro de seu interesse, você poderá verificar sua disponibilidade para empréstimo e saber onde ele está disponível para retirada.
+A página da Biblioteca é responsável por listar os livros que possuem. Onde podem estar explorando nossa vasta coleção de livros disponíveis para empréstimo. Ao encontrar um livro de seu interesse, você poderá verificar sua disponibilidade para empréstimo e saber onde ele está disponível para retirada.
 
 ![biblio.PNG](/doc/biblio.PNG)
 ![Home2.PNG](/doc/Home2.PNG)
@@ -78,7 +78,7 @@ A página da Biblioteca é responsável por listar os livros que possuem. Onde p
 
 ## Telas de Cadastro 
 
-Na tela de Cadastro encontramos opções dpara cadastrdos de Alunos, Professores e/ou Fornecedores. Clicando em cada um é enviado a uma nova página. 
+Na tela de Cadastro encontramos opções para cadastro dos de Alunos, Professores e/ou Fornecedores. Clicando em cada um é enviado a uma nova página. 
 
 ![Cadastro.PNG](/doc/Cadastro.PNG)
 
