@@ -1,5 +1,5 @@
 # Gerenciador de Biblioteca BookEase
-## Repositório destinado ao projeto Integrador dos integrantes:
+## Repositório destinado ao projeto Integrador dos integrantes: 
 
 * Alexsandra Oliveira De Jesus
 * Ana Karolini Bloemer Noth
