@@ -1,5 +1,4 @@
 import {
-  IsDate,
   IsEmail,
   IsString,
   Matches,
@@ -7,7 +6,7 @@ import {
   MinLength,
 } from 'class-validator';
 
-export class CreatePeopleDto {
+export class CreateUserDto {
   @IsString()
   @MinLength(4)
   @MaxLength(20)
@@ -21,9 +20,6 @@ export class CreatePeopleDto {
 
   @IsEmail()
   email: string;
-
-  @IsDate()
-  birthday: Date;
 
   @IsString()
   cell_phone: string;
@@ -54,4 +50,7 @@ export class CreatePeopleDto {
 
   @IsString()
   city: string;
+
+  @IsString()
+  type_user: 'aluno' | 'professor' | 'fornecedor';
 }

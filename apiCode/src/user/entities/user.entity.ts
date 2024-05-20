@@ -9,7 +9,7 @@ import {
 
 @Entity({ name: 'user' })
 @Unique(['email', 'document'])
-export class PeopleEntity {
+export class UserEntity {
   @PrimaryGeneratedColumn('rowid')
   id: number;
 
@@ -24,9 +24,6 @@ export class PeopleEntity {
 
   @Column({ name: 'cell_phone' })
   cell_phone: string;
-
-  @Column({ name: 'academic_educationhone' })
-  academic_educationhone: string;
 
   @Column({ name: 'document', nullable: false })
   document: string;

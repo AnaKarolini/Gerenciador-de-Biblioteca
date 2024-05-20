@@ -8,50 +8,41 @@ import {
   Post,
   Patch,
 } from '@nestjs/common';
+import { CreateUserDto } from './dto/create-user.dto';
 import { UserService } from './user.service';
+import { UserEntity } from './entities/user.entity';
 import { IsPublic } from 'src/auth/decorators/is-public.decorator';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { CreatePeopleDto } from './dto/create-people.dto';
-import { CreateStudentDto } from './dto/create-student.dto';
-import { CreateTeacherDto } from './dto/create.teacher.dto';
-import { CreateSupplierDto } from './dto/create-supplier.dto';
-import { StudentEntity } from './entities/student.entity';
-import { TeacherEntity } from './entities/teacher.entity';
-import { SupplierEntity } from './entities/supplier.entity';
 
-@Controller('user/create')
+@Controller('user')
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @IsPublic()
-  @Post('student')
-  async createStudent(
-    @Body() createStudentDto: CreateStudentDto,
-  ): Promise<StudentEntity> {
-    return this.userService.createStudent(createStudentDto);
-  }
-
-  @IsPublic()
-  @Post('teacher')
-  async createTeacher(
-    @Body() createTeacherDto: CreateTeacherDto,
-  ): Promise<TeacherEntity> {
-    return this.userService.createTeacher(createTeacherDto);
+  @Post()
+  async create(@Body() createUserDto: CreateUserDto): Promise<UserEntity> {
+    return this.userService.create(createUserDto);
   }
 
   //@IsPublic()
-  @IsPublic()
-  @Post('suplier')
-  async createSupplier(
-    @Body() createSupplierDto: CreateSupplierDto,
-  ): Promise<SupplierEntity> {
-    return this.userService.createSupplier(createSupplierDto);
+  @Get('all')
+  async findAll(): Promise<UserEntity[]> {
+    return this.userService.findAll();
   }
 
-  /*
-  @Get('representatives')
-  async findAllRepresentatives(): Promise<PeopleEntity[]> {
-    return this.userService.findAllRepresentatives();
+  @Get('student')
+  async findAllStudents(): Promise<UserEntity[]> {
+    return this.userService.findAllStudents();
+  }
+
+  @Get('teacher')
+  async findAllTeacher(): Promise<UserEntity[]> {
+    return this.userService.findAllTeacher();
+  }
+
+  @Get('supplier')
+  async findAllSupplier(): Promise<UserEntity[]> {
+    return this.userService.findAllSupplier();
   }
 
   @Get(':id')
@@ -68,10 +59,4 @@ export class UserController {
   async remove(@Param('id') id: string) {
     return this.userService.remove(+id);
   }
-
-  @Post('store/:id')
-  async addStoreToUser(@Param('id') userId: number, @Body() addStoreDto: any) {
-    return this.userService.addStoreToUser(userId, addStoreDto);
-  }
-  */
 }

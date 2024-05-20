@@ -1,107 +1,101 @@
-/* eslint-disable prettier/prettier */
 import {
+  BadRequestException,
   ConflictException,
   Injectable,
   NotFoundException,
 } from '@nestjs/common';
-import { PeopleEntity } from './entities/people.entity';
+import { CreateUserDto } from './dto/create-user.dto';
+import { UserEntity } from './entities/user.entity';
 import * as bcrypt from 'bcrypt';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { CreateStudentDto } from './dto/create-student.dto';
-import { CreateTeacherDto } from './dto/create.teacher.dto';
-import { CreateSupplierDto } from './dto/create-supplier.dto';
-import { StudentEntity } from './entities/student.entity';
-import { TeacherEntity } from './entities/teacher.entity';
-import { SupplierEntity } from './entities/supplier.entity';
 
 @Injectable()
 export class UserService {
   constructor(
-    @InjectRepository(PeopleEntity)
-    private readonly studentRepository: Repository<StudentEntity>,
-    @InjectRepository(TeacherEntity)
-    private readonly teacherEntityRepository: Repository<TeacherEntity>,
-    @InjectRepository(SupplierEntity)
-    private readonly supplierEntity: Repository<SupplierEntity>,
+    @InjectRepository(UserEntity)
+    private readonly userRepository: Repository<UserEntity>,
   ) {}
 
-  async createStudent(
-    createStudentDto: CreateStudentDto,
-  ): Promise<StudentEntity> {
-    const emailExist = await this.studentRepository.findOne({
-      where: { email: createStudentDto.email },
-    });
+  async create(createUserDto: CreateUserDto): Promise<UserEntity> {
+    const { email, document, type_user } = createUserDto;
 
-    const documentExist = await this.studentRepository.findOne({
-      where: { document: createStudentDto.document },
+    // Verifica se o type_user é válido
+    const validTypes = ['aluno', 'professor', 'fornecedor'];
+    if (!validTypes.includes(type_user)) {
+      throw new BadRequestException(
+        `Tipo de usuário inválido: ${type_user}, tipos permitidos: aluno, professor ou fornecedor`,
+      );
+    }
+
+    const emailExist = await this.userRepository.findOne({ where: { email } });
+    const documentExist = await this.userRepository.findOne({
+      where: { document },
     });
 
     if (!emailExist && !documentExist) {
-      const createdUser = await this.studentRepository.save({
-        ...createStudentDto,
-        password: await bcrypt.hash(createStudentDto.password, 10),
+      const createdUser = await this.userRepository.save({
+        ...createUserDto,
+        password: await bcrypt.hash(createUserDto.password, 10),
       });
 
       return createdUser;
     }
-    if (documentExist)
+    if (documentExist) {
       throw new ConflictException('Este documento já está em uso.');
+    }
 
-    if (emailExist)
+    if (emailExist) {
       throw new ConflictException('Este endereço de e-mail já está em uso.');
+    }
   }
 
-  async createTeacher(
-    createTeacherDto: CreateTeacherDto,
-  ): Promise<TeacherEntity> {
-    const emailExist = await this.teacherEntityRepository.findOne({
-      where: { email: createTeacherDto.email },
-    });
-
-    const documentExist = await this.teacherEntityRepository.findOne({
-      where: { document: createTeacherDto.document },
-    });
-
-    if (!emailExist && !documentExist) {
-      const createdUser = await this.teacherEntityRepository.save({
-        ...createTeacherDto,
-        password: await bcrypt.hash(createTeacherDto.password, 10),
-      });
-
-      return createdUser;
-    }
-    if (documentExist)
-      throw new ConflictException('Este documento já está em uso.');
-
-    if (emailExist)
-      throw new ConflictException('Este endereço de e-mail já está em uso.');
+  async findAll(): Promise<UserEntity[]> {
+    return this.userRepository.find();
   }
 
-  async createSupplier(
-    createSupplierDto: CreateSupplierDto,
-  ): Promise<SupplierEntity> {
-    const emailExist = await this.supplierEntity.findOne({
-      where: { email: createSupplierDto.email },
+  async findAllStudents(): Promise<UserEntity[]> {
+    const representatives = await this.userRepository.find({
+      where: { type_user: 'aluno' },
+    });
+    return representatives;
+  }
+
+  async findAllTeacher(): Promise<UserEntity[]> {
+    const representatives = await this.userRepository.find({
+      where: { type_user: 'professor' },
+    });
+    return representatives;
+  }
+
+  async findAllSupplier(): Promise<UserEntity[]> {
+    const representatives = await this.userRepository.find({
+      where: { type_user: 'fornecedor' },
+    });
+    return representatives;
+  }
+
+  async findOne(id: number) {
+    const user = await this.userRepository.find({
+      where: { id },
     });
 
-    const documentExist = await this.supplierEntity.findOne({
-      where: { document: createSupplierDto.document },
+    return {
+      ...user,
+      password: undefined,
+    };
+  }
+
+  async update(id: number, updateUserDto: UpdateUserDto) {
+    const hasUser = await this.userRepository.find({
+      where: { id },
     });
+    if (!hasUser) throw new Error('User does not exist');
+    await this.userRepository.save(updateUserDto);
+  }
 
-    if (!emailExist && !documentExist) {
-      const createdUser = await this.supplierEntity.save({
-        ...createSupplierDto,
-        password: await bcrypt.hash(createSupplierDto.password, 10),
-      });
-
-      return createdUser;
-    }
-    if (documentExist)
-      throw new ConflictException('Este documento já está em uso.');
-
-    if (emailExist)
-      throw new ConflictException('Este endereço de e-mail já está em uso.');
+  async remove(id: number) {
+    return `This action removes a #${id} user`;
   }
 }

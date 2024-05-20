@@ -3,20 +3,20 @@ import * as bcrypt from 'bcrypt';
 import { UserPayload } from './models/UserPayload';
 import { JwtService } from '@nestjs/jwt';
 import { UserToken } from './models/UserToken';
-import { PeopleEntity } from 'src/user/entities/people.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+import { UserEntity } from 'src/user/entities/user.entity';
 
 @Injectable()
 export class AuthService {
   constructor(
-    @InjectRepository(PeopleEntity)
-    private readonly userRepository: Repository<PeopleEntity>,
+    @InjectRepository(UserEntity)
+    private readonly userRepository: Repository<UserEntity>,
     private readonly jwtService: JwtService,
   ) {}
 
   //Admin
-  login(user: PeopleEntity): UserToken {
+  login(user: UserEntity): UserToken {
     const payload: UserPayload = {
       sub: user.id,
       email: user.email,
@@ -32,7 +32,7 @@ export class AuthService {
   }
 
   //Representante
-  auth(user: PeopleEntity): UserToken {
+  auth(user: UserEntity): UserToken {
     const payload: UserPayload = {
       sub: user.id,
       email: user.email,

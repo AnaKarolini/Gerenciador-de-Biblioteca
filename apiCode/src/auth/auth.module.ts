@@ -7,11 +7,11 @@ import { UserModule } from 'src/user/user.module';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { LoginValidationUserMiddleware } from './middlewares/login-validation-user.middleware';
-import { PeopleEntity } from 'src/user/entities/people.entity';
+import { UserEntity } from 'src/user/entities/user.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([PeopleEntity]),
+    TypeOrmModule.forFeature([UserEntity]),
     UserModule,
     JwtModule.register({
       secret: 'process.env.JWT_SECRET',
