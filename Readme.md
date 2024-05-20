@@ -7,7 +7,7 @@
 * Kaue Osmar Bornhofen
 * Marcelo De Oliveira Silva
 * Tacio De Paulo Cavalcanti Farias
-* Thalita Pereira Alfonso 
+* Thalita Pereira Alfonso  
 
 ## Descrição 
 
