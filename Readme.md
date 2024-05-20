@@ -34,7 +34,7 @@ Arquivo direcionado
 
 [Code/Codigo.pdf](https://github.com/AnaKarolini/Gerenciador-de-Biblioteca/blob/c315c1f5d89c3d1e0125238f354f91b17ba1f536/Code/Codigo.pdf)
 
-## Código Backend
+## Código Back-end
 
 Arquivo direcionado
 
